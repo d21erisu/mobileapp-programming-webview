@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -13,10 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+    //private String myString;
 
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+     //   myString="Tomten";
+
 
     }
 
@@ -30,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        WebView myWebView = new WebView(this);
+       // findViewById(R.id.WebView);
+       // setContentView(myWebView);
+
+        myWebView.loadUrl("https://google.com");
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -56,14 +66,7 @@ public class MainActivity extends AppCompatActivity {
            one (1) screenshot showing your external web page.
         */
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
     @Override
