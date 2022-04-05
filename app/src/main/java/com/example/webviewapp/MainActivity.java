@@ -18,32 +18,29 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Add your code for showing external web page here
 
     //private String myString;
-    WebView myWebView;
+   private WebView myWebView;
 
 
 
     public void showExternalWebPage(){
 
-        myWebView = (findViewById(R.id.my_webview));
         myWebView.loadUrl("https://google.com");
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-
     }
 
     public void showInternalWebPage(){
-        // TODO: Add your code for showing internal web page here
-        myWebView = (findViewById(R.id.my_webview));
+
         myWebView.loadUrl("https://www.facebook.com");
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        myWebView = (findViewById(R.id.my_webview));
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
