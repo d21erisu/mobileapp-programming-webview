@@ -15,12 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+    // TODO: Add your code for showing external web page here
+
     //private String myString;
+    WebView myWebView;
+
 
 
     public void showExternalWebPage(){
-        // TODO: Add your code for showing external web page here
-        WebView myWebView = new WebView(this);
+
+        myWebView = (findViewById(R.id.my_webview));
         myWebView.loadUrl("https://google.com");
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
-        WebView myWebView = new WebView(this);
+        myWebView = (findViewById(R.id.my_webview));
         myWebView.loadUrl("https://www.facebook.com");
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -64,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
           when you select menu options "External Web Page" or "Internal Web Page"
           respectively
         -- Commit and push to your github fork
+        *
         * Take two screenshots using the "Take a screenshot" tool in the AVD
            showing your App. One (1) screenshot showing your internal web page and
            one (1) screenshot showing your external web page.
