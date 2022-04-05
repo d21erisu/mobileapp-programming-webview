@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,13 +20,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
-     //   myString="Tomten";
+        WebView myWebView = new WebView(this);
+        myWebView.loadUrl("https://google.com");
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
 
     }
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
+        WebView myWebView = new WebView(this);
+        myWebView.loadUrl("https://www.facebook.com");
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
     }
 
     @Override
@@ -35,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        WebView myWebView = new WebView(this);
-       // findViewById(R.id.WebView);
-        setContentView(myWebView);
-
-        myWebView.loadUrl("https://google.com");
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -86,11 +89,13 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
             Log.d("==>","Will display external web page");
+            showExternalWebPage();
             return true;
         }
 
         if (id == R.id.action_internal_web) {
             Log.d("==>","Will display internal web page");
+            showInternalWebPage();
             return true;
         }
 
