@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showInternalWebPage(){
 
-        myWebView.loadUrl("https://www.facebook.com");
+        myWebView.loadUrl("file:///android_asset/img/about.html");
     }
 
     @Override
