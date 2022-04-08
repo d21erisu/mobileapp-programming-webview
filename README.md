@@ -10,16 +10,17 @@ Efter det skulle jag möjliggöra för internetåtkomst vilket gjordes i android
     <uses-permission android:name="android.permission.INTERNET" />
 
 Efter det skulle ett webview element skapas i content_main.xml och då ersatte jag textview blocket med följande kod.
-     WebView
-             android:id="@+id/my_webview"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="Hello World!"
-             app:layout_constraintBottom_toBottomOf="parent"
-             app:layout_constraintLeft_toLeftOf="parent"
-             app:layout_constraintRight_toRightOf="parent"
-             app:layout_constraintTop_toTopOf="parent" /><
-
+     ´´´Xml
+          <WebView
+                 android:id="@+id/my_webview"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Hello World!"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
+    ´´´
 
 Jag gav den ett ID genom att lägga till följande kod i samma block (är inkluderat i kodblocket i stycket över också):
 
